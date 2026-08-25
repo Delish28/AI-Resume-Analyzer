@@ -103,21 +103,43 @@ job_description = st.text_area(
 # LINKEDIN JOB SEARCH
 # ============================================================
 
-st.subheader("🔗 LinkedIn Job Search")
+st.header("🔎 LinkedIn Job Search")
 
-linkedin_job_url = st.text_input(
-    "Paste LinkedIn Job Link",
-    placeholder="https://www.linkedin.com/jobs/view/..."
+st.write("Find jobs on LinkedIn based on your skills and interests.")
+
+linkedin_role = st.text_input(
+    "Job Title / Role",
+    placeholder="Example: Data Analyst"
 )
 
-if linkedin_job_url:
-    if "linkedin.com/jobs" in linkedin_job_url:
-        st.success("✅ LinkedIn job link added")
-        st.markdown(
-            f"🔗 [Open LinkedIn Job]({linkedin_job_url})"
+linkedin_location = st.text_input(
+    "Location",
+    placeholder="Example: Chennai, India"
+)
+
+if linkedin_role:
+
+    from urllib.parse import quote
+
+    search_query = quote(linkedin_role)
+
+    if linkedin_location:
+        location_query = quote(linkedin_location)
+        linkedin_url = (
+            f"https://www.linkedin.com/jobs/search/"
+            f"?keywords={search_query}"
+            f"&location={location_query}"
         )
     else:
-        st.warning("⚠️ Please enter a valid LinkedIn job link.")
+        linkedin_url = (
+            f"https://www.linkedin.com/jobs/search/"
+            f"?keywords={search_query}"
+        )
+
+    st.link_button(
+        "🔗 Search Jobs on LinkedIn",
+        linkedin_url
+    )
 
 
 # ============================================================
