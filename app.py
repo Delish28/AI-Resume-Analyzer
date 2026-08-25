@@ -78,12 +78,34 @@ else:
 # STEP 2 - JOB DESCRIPTION
 # ============================================================
 
-st.header("2️⃣ Enter Job Description")
-
 job_description = st.text_area(
-    "Paste the complete job description here:",
+    "Paste the complete job description here",
     height=300,
-    placeholder="""Example:
+    placeholder="..."
+)
+
+# LinkedIn Job Search
+st.subheader("🔗 LinkedIn Job Search")
+
+linkedin_job_url = st.text_input(
+    "Paste LinkedIn Job Link",
+    placeholder="https://www.linkedin.com/jobs/view/..."
+)
+
+if linkedin_job_url:
+    if "linkedin.com/jobs" in linkedin_job_url:
+        st.success("✅ LinkedIn job link added")
+
+        st.markdown(
+            f"[🔗 Open LinkedIn Job]({linkedin_job_url})"
+        )
+
+        st.info(
+            "Copy the job description from LinkedIn and paste it below."
+        )
+
+    else:
+        st.warning("⚠️ Please enter a valid LinkedIn job link.")
 
 We are looking for a Junior Data Analyst / Software Developer Intern.
 
