@@ -86,18 +86,7 @@ job_description = st.text_area(
     placeholder="Paste the job description here..."
 )
 
-# ============================================================
-# ============================================================
-# STEP 2 - JOB DESCRIPTION
-# ============================================================
 
-st.header("📝 Enter Job Description")
-
-job_description = st.text_area(
-    "Paste the complete job description here",
-    height=300,
-    placeholder="Paste LinkedIn job description here..."
-)
 
 # ============================================================
 # LINKEDIN JOB SEARCH
