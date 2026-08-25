@@ -87,6 +87,19 @@ job_description = st.text_area(
 )
 
 # ============================================================
+# ============================================================
+# STEP 2 - JOB DESCRIPTION
+# ============================================================
+
+st.header("📝 Enter Job Description")
+
+job_description = st.text_area(
+    "Paste the complete job description here",
+    height=300,
+    placeholder="Paste LinkedIn job description here..."
+)
+
+# ============================================================
 # LINKEDIN JOB SEARCH
 # ============================================================
 
@@ -100,49 +113,11 @@ linkedin_job_url = st.text_input(
 if linkedin_job_url:
     if "linkedin.com/jobs" in linkedin_job_url:
         st.success("✅ LinkedIn job link added")
-
         st.markdown(
-            f"[🔗 Open LinkedIn Job]({linkedin_job_url})"
-        )
-
-        st.info(
-            "Copy the job description from LinkedIn and paste it above."
+            f"🔗 [Open LinkedIn Job]({linkedin_job_url})"
         )
     else:
         st.warning("⚠️ Please enter a valid LinkedIn job link.")
-
-We are looking for a Junior Data Analyst / Software Developer Intern.
-
-Responsibilities:
-- Analyze and clean data using Python.
-- Create reports and dashboards.
-- Work with databases and SQL queries.
-- Develop simple web applications.
-- Collaborate with the development team.
-
-Requirements:
-- Python
-- Java
-- C
-- HTML
-- CSS
-- JavaScript
-- SQL
-- RDBMS
-- Data Analytics
-- Pandas
-- NumPy
-- Git
-- GitHub
-
-Preferred Skills:
-- Machine Learning
-- MongoDB
-- REST API
-- React
-- Streamlit
-"""
-)
 
 
 # ============================================================
