@@ -78,13 +78,18 @@ else:
 # STEP 2 - JOB DESCRIPTION
 # ============================================================
 
+st.header("📝 Enter Job Description")
+
 job_description = st.text_area(
     "Paste the complete job description here",
     height=300,
-    placeholder="..."
+    placeholder="Paste the job description here..."
 )
 
-# LinkedIn Job Search
+# ============================================================
+# LINKEDIN JOB SEARCH
+# ============================================================
+
 st.subheader("🔗 LinkedIn Job Search")
 
 linkedin_job_url = st.text_input(
@@ -101,9 +106,8 @@ if linkedin_job_url:
         )
 
         st.info(
-            "Copy the job description from LinkedIn and paste it below."
+            "Copy the job description from LinkedIn and paste it above."
         )
-
     else:
         st.warning("⚠️ Please enter a valid LinkedIn job link.")
 
